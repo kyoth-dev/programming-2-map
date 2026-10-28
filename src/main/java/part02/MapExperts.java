@@ -25,6 +25,7 @@ public class MapExperts {
      * contains only letters.
      */
     public Map<Character, Integer> countLetters(String word) {
+        
         /*
          * Hint: you can get the characters of a String using either the charAt() method
          * or the toCharArray() method. charAt() returns a single character and

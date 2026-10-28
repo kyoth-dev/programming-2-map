@@ -1,4 +1,4 @@
 {
-  "github.copilot.nextEditSuggestions.enabled": false,
-  "github.copilot.enable": { "java": false }
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.enable": { "java": true }
 }
