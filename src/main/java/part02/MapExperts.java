@@ -2,6 +2,7 @@ package part02;
 
 import java.util.List;
 import java.util.Map;
+import java.util.HashMap;
 
 /**
  * This class contains a set of methods that you need to implement.
@@ -25,13 +26,23 @@ public class MapExperts {
      * contains only letters.
      */
     public Map<Character, Integer> countLetters(String word) {
+        Map<Character, Integer> letterCount = new HashMap<>();
+        for (int i = 0; i < word.length(); i++) {
+            char letter = word.charAt(i);
+         if (letterCount.containsKey(letter)) {
+            letterCount.put (letter, letterCount.get(letter) +1);
+         }
+         else {
+            letterCount.put(letter, 1);
+         }
+        }
         
         /*
          * Hint: you can get the characters of a String using either the charAt() method
          * or the toCharArray() method. charAt() returns a single character and
          * toCharArray() returns an array of characters.
          */
-        return null;
+        return letterCount;
     }
 
     /**
@@ -43,6 +54,10 @@ public class MapExperts {
      * { 1 -> "one", 2 -> "two", 3 -> "three" }
      */
     public Map<Integer, String> reverseMap(Map<String, Integer> map) {
+        Map<Integer, String> reversedMap = new HashMap<>();
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            reversedMap.put(entry.getValue(), entry.getKey());
+        }
         /*
          * The keys of a map are always unique, so we can't have two keys with the same
          * value. However, there is no such restriction for the values of a map:
@@ -53,7 +68,7 @@ public class MapExperts {
          * can choose any of the keys to be the value of the reversed map. So either
          * { 1 -> "apples" } or { 1 -> "oranges" } will be accepted.
          */
-        return null;
+        return reversedMap;
     }
 
     /**
@@ -71,6 +86,10 @@ public class MapExperts {
      * "SOF004AS2A" -> Course("SOF004AS2A", "Python-ohjelmointi")
      */
     public Map<String, Course> createMapFromList(List<Course> list) {
+        Map<String, Course> courseMap = new HashMap<>();
+        for (Course course : list) {
+            courseMap.put(course.code(), course);
+        }
         /*
          * Each Course object has a code and a name. You can access them using the
          * code() and name() methods:
@@ -78,6 +97,6 @@ public class MapExperts {
          * String code = course.code();
          * String name = course.name(); // you won't need this in the exercise
          */
-        return null;
+        return courseMap;
     }
 }
